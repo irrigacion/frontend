@@ -1,0 +1,12 @@
+{
+	"name": "@irrigacion/config",
+	"private": true,
+	"version": "0.0.1",
+	"exports": {
+		"./vite": "./vite/vite.config.base.ts",
+		"./tsconfig/base": "./tsconfig/tsconfig.base.json",
+		"./tsconfig/react": "./tsconfig/tsconfig.react.json",
+		"./tsconfig/lib": "./tsconfig/tsconfig.lib.json",
+		"./tsconfig/node": "./tsconfig/tsconfig.node.json"
+	}
+}

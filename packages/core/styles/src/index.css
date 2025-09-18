@@ -1,0 +1,13 @@
+:root {
+	--color-primary: hsl(192.63deg 69.72% 42.75%);
+	--color-secondary: hsl(210, 40%, 96.1%);
+	--color-success: hsl(142.1, 76.2%, 36.3%);
+	--color-danger: hsl(0, 84.2%, 60.2%);
+	--color-warning: hsl(47.9, 95.8%, 53.1%);
+	--color-text-on-primary: hsl(210, 40%, 98%);
+	--color-text-default: hsl(222.2, 47.4%, 11.2%);
+
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 1rem;
+}

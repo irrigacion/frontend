@@ -1,0 +1,58 @@
+---
+title: Button
+description: Componente botón básico para React.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Tabs, TabItem, Code } from '@astrojs/starlight/components';
+import { Button } from '@irrigacion/button';
+import ComponentPreview from '@/components/ComponentPreview.astro';
+
+Componente botón básico para React.
+
+<ComponentPreview height='200px'>
+	<Button client:only='react'>Click</Button>
+</ComponentPreview>
+
+### Instalación
+
+<Tabs syncKey='pkg'>
+	<TabItem label='pnpm'>
+		<Code code={'pnpm install @irrigacion/button'} lang='sh' />
+	</TabItem>
+	<TabItem label='npm'>
+		<Code code={'npm install @irrigacion/button'} lang='sh' />
+	</TabItem>
+	<TabItem label='yarn'>
+		<Code code={'yarn add @irrigacion/button'} lang='sh' />
+	</TabItem>
+</Tabs>
+
+### Uso
+
+<Tabs syncKey='usage'>
+    <TabItem label='TypeScript'>
+
+        ```tsx
+        import { Button } from '@irrigacion/button';
+
+        export const Component = () => {
+            return <Button>Click aquí</Button>;
+        };
+        ```
+
+    </TabItem>
+
+    <TabItem label='JavaScript'>
+
+        ```jsx
+        import { Button } from '@irrigacion/button';
+
+        export const Component = () => {
+            return <Button>Click aquí</Button>;
+        };
+        ```
+
+    </TabItem>
+
+</Tabs>

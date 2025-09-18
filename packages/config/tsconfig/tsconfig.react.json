@@ -1,0 +1,10 @@
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"lib": ["DOM", "ESNext"],
+		"jsx": "react-jsx",
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"types": ["vitest/globals", "@testing-library/jest-dom", "node", "@types/css-modules"]
+	}
+}

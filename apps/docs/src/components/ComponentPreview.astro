@@ -1,0 +1,45 @@
+---
+interface Props {
+  title?: string;
+  height?: string;
+}
+
+const { title, height = '250px' } = Astro.props;
+---
+
+<div class="preview-wrapper">
+  {title && <h4 class="preview-title">{title}</h4>}
+
+  <div class="preview-box" style={`min-height: ${height};`}>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .preview-wrapper {
+    margin-block: 2.5rem;
+  }
+
+  .preview-title {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .preview-box {
+    display: grid;
+    place-content: center;
+    padding: 2rem;
+    
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: var(--sl-radius-large);
+    background-color: var(--sl-color-gray-6);
+    
+    background-image: radial-gradient(var(--sl-color-gray-5) 1px, transparent 1px);
+    background-size: 1rem 1rem;
+
+    resize: vertical;
+    overflow: auto;
+  }
+</style>

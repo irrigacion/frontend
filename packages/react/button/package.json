@@ -1,0 +1,44 @@
+{
+	"name": "@irrigacion/button",
+	"version": "0.0.1",
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irrigacion/frontend",
+		"directory": "packages/react/button"
+	},
+	"bugs": {
+		"url": "https://github.com/irrigacion/frontend/issues"
+	},
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"react",
+		"component",
+		"button",
+		"ui",
+		"irrigacion"
+	],
+	"scripts": {
+		"build": "vite build",
+		"dev": "vite build --watch",
+		"test": "vitest",
+		"lint": "eslint . --ext .ts,.tsx"
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
+	},
+	"dependencies": {
+		"@irrigacion/styles": "0.0.1",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1"
+	},
+	"devDependencies": {
+		"@irrigacion/config": "*"
+	}
+}

@@ -1,0 +1,75 @@
+---
+title: Button
+description: Componente botón básico para React Native.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Steps>
+
+    1. **Instalar el paquete**
+
+        <Tabs syncKey="pkg">
+          <TabItem label="pnpm">
+            ```sh
+            pnpm install @irrigacion/react-native
+            ```
+          </TabItem>
+          <TabItem label="npm">
+            ```sh
+            npm install @irrigacion/react-native
+            ```
+          </TabItem>
+          <TabItem label="yarn">
+            ```sh
+            yarn add @irrigacion/react-native
+            ```
+          </TabItem>
+        </Tabs>
+
+        o individualmente
+
+        <Tabs syncKey="pkg">
+          <TabItem label="pnpm">
+            ```sh
+            pnpm install @irrigacion/button-apk
+            ```
+          </TabItem>
+
+          <TabItem label="npm">
+            ```sh
+            npm install @irrigacion/button-apk
+            ```
+          </TabItem>
+
+          <TabItem label="yarn">
+            ```sh
+            yarn add @irrigacion/button-apk
+            ```
+          </TabItem>
+        </Tabs>
+
+    2. **Importar el componente**
+
+        El componente se importa siempre de la misma forma, sin importar desde dónde lo hayas instalado:
+
+        ```tsx
+        import { Button } from '@irrigacion/react-native';
+        // o
+        import { Button } from '@irrigacion/button-apk';
+        ```
+
+    3. **Uso básico**
+
+        Cómo utilizar el botón en el proyecto:
+
+        ```tsx
+        import { Button } from '@irrigacion/react-native';
+
+        export const Component = () => {
+          return <Button>Click aquí</Button>;
+        }
+        ```
+
+</Steps>

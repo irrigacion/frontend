@@ -1,0 +1,135 @@
+---
+title: Instalación
+description: Guía para instalar las distintas utilidades y componentes de los packages de @irrigacion
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Las dependencias necesarias de **@irrigacion** pueden instalarse de forma **agrupada** o de forma **individual** (cuando solo necesitas un componente específico).
+
+Antes de comenzar, asegúrate de tener instalado uno de los gestores de paquetes compatibles: **pnpm**, **npm**, o **yarn**.
+
+---
+
+### Instalar dependencias de forma agrupada
+
+Te permite instalar **un paquete principal** que incluye los módulos más utilizados, simplificando el proceso de configuración.
+
+<Steps>
+
+1. **Instalar la dependencia general**
+
+    Primero, instala el gestor de paquetes de tu preferencia si aún no lo tienes.  
+    Luego, ejecuta el comando correspondiente para instalar los paquetes agrupados.
+
+    <Tabs syncKey="pkg">
+
+    <TabItem label="pnpm">
+
+    ```sh
+    # Instalar pnpm de forma global (solo si no lo tienes)
+    npm install -g pnpm
+
+    # Instalar las dependencias requeridas con pnpm
+    pnpm install @irrigacion/core
+    pnpm install @irrigacion/react
+    pnpm install @irrigacion/react-native
+    ```
+
+    </TabItem>
+
+    <TabItem label="npm">
+
+    ```sh
+    npm install @irrigacion/core
+    npm install @irrigacion/react
+    npm install @irrigacion/react-native
+    ```
+
+    </TabItem>
+
+    <TabItem label="yarn">
+
+    ```sh
+    # Instalar yarn de forma global (solo si no lo tienes)
+    npm install -g yarn
+
+    # Instalar las dependencias requeridas con yarn
+    yarn install @irrigacion/core
+    yarn install @irrigacion/react
+    yarn install @irrigacion/react-native
+    ```
+
+    </TabItem>
+
+    </Tabs>
+
+2. **Importar y usar un componente desde el paquete agrupado**
+
+    Una vez instaladas las dependencias, puedes importar cualquier componente directamente desde `@irrigacion/react` u otro paquete agrupado.
+
+    ```tsx
+    import { Button } from '@irrigacion/react';
+
+    const Componente = () => {
+    	return <Button>Botón</Button>;
+    };
+    ```
+
+</Steps>
+
+---
+
+### Instalar dependencias de forma individual
+
+Si solo necesitas **un componente específico**, puedes instalarlo de forma individual.  
+Esto es útil para mantener el tamaño de tu proyecto más liviano y evitar dependencias innecesarias.
+
+<Steps>
+
+1. **Instalar la dependencia individual**
+
+    Ejecuta el comando correspondiente a tu gestor de paquetes para instalar solo el componente que necesitas, como por ejemplo `@irrigacion/button`.
+
+    <Tabs syncKey="pkg">
+
+    <TabItem label="pnpm">
+
+    ```sh
+    pnpm install @irrigacion/button
+    ```
+
+    </TabItem>
+
+    <TabItem label="npm">
+
+    ```sh
+    npm install @irrigacion/button
+    ```
+
+    </TabItem>
+
+    <TabItem label="yarn">
+
+    ```sh
+    yarn install @irrigacion/button
+    ```
+
+    </TabItem>
+
+    </Tabs>
+
+2. **Importar y usar el componente individual**
+
+    Ahora puedes importar el componente directamente desde su paquete correspondiente.
+
+    ```tsx
+    import { Button } from '@irrigacion/button';
+
+    const Componente = () => {
+    	return <Button>Botón</Button>;
+    };
+    ```
+
+</Steps>
