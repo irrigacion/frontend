@@ -1,9 +1,23 @@
 {
 	"name": "@irrigacion/styles",
 	"version": "0.0.1",
+	"private": false,
+	"description": "Genera y exporta las variables CSS globales del sistema de diseño Irrigacion.",
+	"license": "MIT",
 	"main": "src/index.css",
 	"style": "src/index.css",
 	"files": [
 		"src"
-	]
+	],
+	"scripts": {
+		"build": "node generate-css.mjs"
+	},
+	"devDependencies": {
+		"@irrigacion/theme": "0.0.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irrigacion/frontend.git",
+		"directory": "packages/core/styles"
+	}
 }

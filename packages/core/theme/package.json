@@ -1,0 +1,23 @@
+{
+	"name": "@irrigacion/theme",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Contiene los design tokens (colores, espaciado, etc.) para el sistema de diseño Irrigacion.",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"typescript": "^5.9.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irrigacion/frontend",
+		"directory": "packages/core/theme"
+	}
+}

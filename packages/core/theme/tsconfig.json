@@ -1,0 +1,22 @@
+// /packages/core/theme/tsconfig.json
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"rootDir": "src",
+		"declaration": true,
+		"module": "ESNext",
+		"target": "ESNext",
+		"moduleResolution": "node",
+
+		// --- AÑADE ESTAS LÍNEAS CLAVE ---
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true
+		// --------------------------------
+	},
+	"include": ["src"],
+	// --- AÑADE ESTA LÍNEA CLAVE ---
+	"exclude": ["node_modules", "dist"]
+	// ------------------------------
+}
