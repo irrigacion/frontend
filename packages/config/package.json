@@ -7,6 +7,7 @@
 		"./tsconfig/base": "./tsconfig/tsconfig.base.json",
 		"./tsconfig/react": "./tsconfig/tsconfig.react.json",
 		"./tsconfig/lib": "./tsconfig/tsconfig.lib.json",
-		"./tsconfig/node": "./tsconfig/tsconfig.node.json"
+		"./tsconfig/node": "./tsconfig/tsconfig.node.json",
+		"./tsconfig/react-native": "./tsconfig/tsconfig.react-native.json"
 	}
 }

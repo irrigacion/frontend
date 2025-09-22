@@ -1,9 +1,10 @@
 /// <reference types="vitest" />
-import path from 'node:path';
 import react from '@vitejs/plugin-react';
-import dts from 'vite-plugin-dts';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+import dts from 'vite-plugin-dts';
+import type { ViteUserConfig } from 'vitest/config';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,7 +15,7 @@ export function createViteConfig(
 		name?: string;
 		formats?: Array<'es' | 'cjs' | 'umd'>;
 	},
-) {
+): ViteUserConfig {
 	const name = opts?.name;
 	const formats = opts?.formats ?? ['es', 'cjs'];
 

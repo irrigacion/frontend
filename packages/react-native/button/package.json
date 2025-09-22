@@ -1,0 +1,42 @@
+{
+	"name": "@irrigacion/button-apk",
+	"version": "0.0.1",
+	"private": false,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irrigacion/frontend",
+		"directory": "packages/react-native/button"
+	},
+	"bugs": {
+		"url": "https://github.com/irrigacion/frontend/issues"
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"react-native",
+		"component",
+		"button",
+		"ui",
+		"irrigacion"
+	],
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"test": "vitest",
+		"lint": "eslint . --ext .ts,.tsx"
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-native": ">=0.60.0"
+	},
+	"dependencies": {
+		"@irrigacion/theme": "0.0.1"
+	},
+	"devDependencies": {
+		"@irrigacion/config": "*"
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"name": "@irrigacion/react-native",
+	"version": "0.0.1",
+	"private": false,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irrigacion/frontend",
+		"directory": "packages/react-native"
+	},
+	"bugs": {
+		"url": "https://github.com/irrigacion/frontend/issues"
+	},
+	"keywords": [
+		"react-native",
+		"component",
+		"ui",
+		"irrigacion"
+	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"lint": "eslint . --ext .ts,.tsx"
+	},
+	"dependencies": {
+		"@irrigacion/button-apk": "0.0.1"
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-native": ">=0.60.0"
+	}
+}
