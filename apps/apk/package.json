@@ -1,5 +1,5 @@
 {
-	"name": "apk",
+	"name": "@irrigacion/apk",
 	"version": "1.0.0",
 	"main": "index.ts",
 	"scripts": {
@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@irrigacion/button-apk": "*",
+		"@irrigacion/modal-apk": "*",
 		"expo": "~54.0.9",
 		"expo-status-bar": "~3.0.8",
 		"react": "19.1.0",

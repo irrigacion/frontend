@@ -1,13 +1,14 @@
 import { Button } from '@irrigacion/button-apk';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { ViewButtons } from './components/buttons';
+import { ViewModal } from './components/modal';
 
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Button variant='primary'>Primary</Button>
-			<Button variant='secondary'>Secondary</Button>
-			<Button variant='danger'>Danger</Button>
+			<ViewButtons />
+			<ViewModal />
 			<StatusBar style='auto' />
 		</View>
 	);

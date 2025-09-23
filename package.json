@@ -28,6 +28,7 @@
 		"check-format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md,html,yml}\"",
 		"docs:typedoc": "typedoc",
 		"docs:astro": "yarn workspace @irrigacion/docs dev",
+		"android": "yarn workspace @irrigacion/apk android",
 		"clean": "rm -rf node_modules packages/**/dist apps/docs/dist",
 		"prepare": "husky",
 		"storybook": "storybook dev -p 6006",
