@@ -1,18 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Children, isValidElement, useEffect, useRef, useState } from 'react';
 import {
-	Modal as BaseModal,
-	View,
-	TouchableWithoutFeedback,
 	Animated,
-	Pressable,
-	Text,
+	Modal as BaseModal,
 	Dimensions,
 	StyleProp,
+	TouchableWithoutFeedback,
+	View,
 	ViewStyle,
 } from 'react-native';
 import { useModal } from './modal.context';
-import { ContentProps, ModalSize } from './modal.types';
+import { Header } from './modal.header';
 import { styles } from './modal.style';
+import { ContentProps, ModalSize } from './modal.types';
 
 export const Content = ({ children }: ContentProps) => {
 	const { open, setOpen, config } = useModal();
@@ -42,6 +41,14 @@ export const Content = ({ children }: ContentProps) => {
 			]).start(() => setIsVisible(false));
 		}
 	}, [open]);
+
+	let header: React.ReactElement | null = null;
+	const bodyContent: React.ReactNode[] = [];
+
+	Children.forEach(children, (child) => {
+		if (isValidElement<ContentProps>(child) && child.type === Header) header = child;
+		else bodyContent.push(child);
+	});
 
 	if (!isVisible) return null;
 
@@ -84,20 +91,11 @@ export const Content = ({ children }: ContentProps) => {
 					]}
 				>
 					{/* Header */}
-					{config.title || config.showCloseButton ? (
-						<View style={styles.header}>
-							{config.title && <Text style={styles.title}>{config.title}</Text>}
-							{config.showCloseButton && (
-								<Pressable onPress={() => setOpen(false)}>
-									<Text style={styles.closeButton}>✕</Text>
-								</Pressable>
-							)}
-						</View>
-					) : null}
+					{header}
 
 					{/* Body */}
 					<View style={[styles.body, config.size === 'auto' ? {} : { flex: 1 }]}>
-						{children}
+						{bodyContent}
 					</View>
 				</Animated.View>
 			</View>

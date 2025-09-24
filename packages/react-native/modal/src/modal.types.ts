@@ -6,7 +6,6 @@ export type ModalSize = 'auto' | 'lg' | 'fullscreen';
 export interface ModalConfig {
 	onOpen?: () => void;
 	onClose?: () => void;
-	title?: string;
 	showCloseButton?: boolean;
 	size?: ModalSize;
 }
@@ -27,4 +26,8 @@ export interface TriggerProps {
 
 export interface ContentProps {
 	children: ReactNode;
+}
+
+export interface HeaderProps {
+	children?: ReactNode;
 }
