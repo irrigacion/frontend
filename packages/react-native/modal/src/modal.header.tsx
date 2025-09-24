@@ -9,7 +9,8 @@ export const Header = ({ children }: HeaderProps) => {
 
 	return (
 		<View style={styles.header}>
-			<View>{children}</View>
+			<View style={styles.headerContent}>{children}</View>
+
 			{config.showCloseButton && (
 				<Pressable onPress={() => setOpen(false)}>
 					<Text style={styles.closeButton}>✕</Text>

@@ -23,9 +23,11 @@ export const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		padding: theme.spacing.sm,
 		borderBottomWidth: 1,
 		borderColor: '#ddd',
+	},
+	headerContent: {
+		flex: 1,
 	},
 	title: {
 		fontSize: 18,
@@ -34,6 +36,9 @@ export const styles = StyleSheet.create({
 	closeButton: {
 		fontSize: 20,
 		padding: theme.spacing.xs,
+		width: 36,
+		height: 36,
+		textAlign: 'center',
 	},
 	body: {
 		padding: theme.spacing.sm,
