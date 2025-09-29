@@ -26,6 +26,8 @@ export interface TriggerProps {
 
 export interface ContentProps {
 	children: ReactNode;
+	onMount?: () => void;
+	onUnmount?: () => void;
 }
 
 export interface HeaderProps {

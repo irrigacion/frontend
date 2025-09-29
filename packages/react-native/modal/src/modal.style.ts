@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
 	},
 	headerContent: {
 		flex: 1,
+		padding: theme.spacing.md,
 	},
 	title: {
 		fontSize: 18,

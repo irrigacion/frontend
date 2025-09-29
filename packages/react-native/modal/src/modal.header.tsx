@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useModal } from './modal.context';
 import { styles } from './modal.style';
@@ -19,3 +18,5 @@ export const Header = ({ children }: HeaderProps) => {
 		</View>
 	);
 };
+
+Header.displayName = 'ModalHeader';

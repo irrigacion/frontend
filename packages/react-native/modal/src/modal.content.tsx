@@ -1,8 +1,9 @@
-import React, { Children, isValidElement, useEffect, useRef, useState } from 'react';
+import { Children, isValidElement, useEffect, useRef, useState } from 'react';
 import {
 	Animated,
 	Modal as BaseModal,
 	Dimensions,
+	Keyboard,
 	StyleProp,
 	TouchableWithoutFeedback,
 	View,
@@ -13,7 +14,7 @@ import { Header } from './modal.header';
 import { styles } from './modal.style';
 import { ContentProps, ModalSize } from './modal.types';
 
-export const Content = ({ children }: ContentProps) => {
+export const Content = ({ children, onMount, onUnmount }: ContentProps) => {
 	const { open, setOpen, config } = useModal();
 	const window = Dimensions.get('window');
 
@@ -23,17 +24,25 @@ export const Content = ({ children }: ContentProps) => {
 	const scale = useRef(new Animated.Value(0.8)).current;
 
 	useEffect(() => {
+		if (!isVisible) return;
+
+		return () => {
+			onUnmount?.();
+		};
+	}, [isVisible, onUnmount]);
+
+	useEffect(() => {
 		if (open) {
 			setIsVisible(true);
 			Animated.parallel([
-				Animated.timing(opacity, { toValue: 1, duration: 200, useNativeDriver: true }),
+				Animated.timing(opacity, { toValue: 1, duration: 0, useNativeDriver: true }),
 				Animated.spring(scale, {
 					toValue: 1,
 					bounciness: 5,
-					speed: 12,
+					speed: 50,
 					useNativeDriver: true,
 				}),
-			]).start();
+			]).start(() => onMount?.());
 		} else {
 			Animated.parallel([
 				Animated.timing(opacity, { toValue: 0, duration: 150, useNativeDriver: true }),
@@ -46,8 +55,11 @@ export const Content = ({ children }: ContentProps) => {
 	const bodyContent: React.ReactNode[] = [];
 
 	Children.forEach(children, (child) => {
-		if (isValidElement<ContentProps>(child) && child.type === Header) header = child;
-		else bodyContent.push(child);
+		if (isValidElement<ContentProps>(child)) {
+			const childType = child.type as React.ComponentType<any> & { displayName: string };
+			if (childType.displayName === Header.displayName) header = child;
+			else bodyContent.push(child);
+		}
 	});
 
 	if (!isVisible) return null;
@@ -67,37 +79,44 @@ export const Content = ({ children }: ContentProps) => {
 			animationType='none'
 			onRequestClose={() => setOpen(false)}
 		>
-			{/* Backdrop */}
-			<TouchableWithoutFeedback onPress={() => setOpen(false)}>
-				<Animated.View style={[styles.backdrop, { opacity }]} />
-			</TouchableWithoutFeedback>
+			<View style={{ flex: 1 }} pointerEvents='box-none'>
+				{/* Backdrop */}
+				<TouchableWithoutFeedback onPress={() => setOpen(false)}>
+					<Animated.View
+						style={[styles.backdrop, { opacity }]}
+						pointerEvents='box-only'
+					/>
+				</TouchableWithoutFeedback>
 
-			{/* Contenedor centrado */}
-			<View
-				style={[
-					styles.centeredContainer,
-					{ padding: config.size === 'fullscreen' ? 0 : 16 },
-				]}
-			>
-				<Animated.View
+				{/* Contenedor centrado */}
+				<View
 					style={[
-						styles.contentWrapper,
-						sizeStyle,
-						{
-							borderRadius: config.size === 'fullscreen' ? 0 : 12,
-							maxHeight: config.size === 'fullscreen' ? '100%' : '90%',
-							transform: [{ scale }],
-						},
+						styles.centeredContainer,
+						{ padding: config.size === 'fullscreen' ? 0 : 16 },
 					]}
 				>
-					{/* Header */}
-					{header}
+					<Animated.View
+						style={[
+							styles.contentWrapper,
+							sizeStyle,
+							{
+								borderRadius: config.size === 'fullscreen' ? 0 : 8,
+								maxHeight: config.size === 'fullscreen' ? '100%' : '90%',
+								transform: [{ scale }],
+							},
+						]}
+					>
+						{/* Header */}
+						{header}
 
-					{/* Body */}
-					<View style={[styles.body, config.size === 'auto' ? {} : { flex: 1 }]}>
-						{bodyContent}
-					</View>
-				</Animated.View>
+						{/* Body */}
+						<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+							<View style={[styles.body, config.size === 'auto' ? {} : { flex: 1 }]}>
+								{bodyContent}
+							</View>
+						</TouchableWithoutFeedback>
+					</Animated.View>
+				</View>
 			</View>
 		</BaseModal>
 	);

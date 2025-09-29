@@ -3,13 +3,17 @@ import { Content } from './modal.content';
 import { ModalContext } from './modal.context';
 import { Trigger } from './modal.trigger';
 import { RootModalProps } from './modal.types';
+import { Keyboard } from 'react-native';
 
 export const Root = ({ children, ...config }: RootModalProps) => {
 	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
 		if (open && config.onOpen) config.onOpen();
-		if (!open && config.onClose) config.onClose();
+		if (!open && config.onClose) {
+			Keyboard.dismiss();
+			config.onClose();
+		}
 	}, [open, config.onOpen, config.onClose]);
 
 	let trigger: React.ReactElement | null = null;
