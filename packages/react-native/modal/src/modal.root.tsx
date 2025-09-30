@@ -1,20 +1,42 @@
 import React, { Children, isValidElement, useEffect, useState } from 'react';
+import { Keyboard } from 'react-native';
 import { Content } from './modal.content';
 import { ModalContext } from './modal.context';
 import { Trigger } from './modal.trigger';
 import { RootModalProps } from './modal.types';
-import { Keyboard } from 'react-native';
 
-export const Root = ({ children, ...config }: RootModalProps) => {
-	const [open, setOpen] = useState(false);
+export const Root = ({
+	children,
+	open: controlledOpen,
+	onOpenChange,
+	...config
+}: RootModalProps) => {
+	const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+	const isControlled = controlledOpen !== undefined;
+	const open = isControlled ? controlledOpen : uncontrolledOpen;
+
+	const setOpen = (value: boolean) => {
+		if (isControlled) {
+			onOpenChange?.(value);
+		} else {
+			setUncontrolledOpen(value);
+		}
+	};
+
+	const [hasOpened, setHasOpened] = useState(false);
 
 	useEffect(() => {
-		if (open && config.onOpen) config.onOpen();
-		if (!open && config.onClose) {
-			Keyboard.dismiss();
-			config.onClose();
+		if (open && !hasOpened) {
+			config.onOpen?.();
+			setHasOpened(true);
 		}
-	}, [open, config.onOpen, config.onClose]);
+		//
+		else if (!open && hasOpened) {
+			Keyboard.dismiss();
+			config.onClose?.();
+			setHasOpened(false);
+		}
+	}, [open, hasOpened, config.onOpen, config.onClose]);
 
 	let trigger: React.ReactElement | null = null;
 	let content: React.ReactElement | null = null;
