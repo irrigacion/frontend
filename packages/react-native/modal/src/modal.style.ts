@@ -25,23 +25,25 @@ export const styles = StyleSheet.create({
 		alignItems: 'center',
 		borderBottomWidth: 1,
 		borderColor: '#ddd',
+		padding: theme.spacing[3],
 	},
 	headerContent: {
 		flex: 1,
-		padding: theme.spacing.md,
 	},
-	title: {
-		fontSize: 18,
-		fontWeight: '600',
+	closeButtonContainer: {
+		paddingLeft: theme.spacing[2],
 	},
 	closeButton: {
-		fontSize: 20,
-		padding: theme.spacing.xs,
-		width: 36,
-		height: 36,
-		textAlign: 'center',
+		color: 'black',
+		padding: theme.spacing[3],
+		borderRadius: theme.radius.sm,
+		minWidth: 25,
+		minHeight: 25,
 	},
 	body: {
 		padding: theme.spacing.sm,
+	},
+	footer: {
+		padding: theme.spacing[3],
 	},
 });

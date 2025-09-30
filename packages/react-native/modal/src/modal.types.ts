@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
-import { PressableStateCallbackType } from 'react-native';
+import { PressableStateCallbackType, StyleProp, ViewStyle } from 'react-native';
 
 export type ModalSize = 'auto' | 'lg' | 'fullscreen';
 
 export interface ModalConfig {
 	onOpen?: () => void;
 	onClose?: () => void;
+	title?: string;
 	showCloseButton?: boolean;
 	size?: ModalSize;
 }
@@ -18,18 +19,27 @@ export interface ModalContextValue {
 
 export interface RootModalProps extends ModalConfig {
 	children: ReactNode;
+	open?: boolean;
+	onOpenChange?: (open: boolean) => void;
 }
 
 export interface TriggerProps {
 	children: ReactNode | ((state: PressableStateCallbackType) => ReactNode);
 }
 
+export interface HeaderProps {
+	children?: ReactNode;
+	style?: StyleProp<ViewStyle>;
+}
+
 export interface ContentProps {
 	children: ReactNode;
 	onMount?: () => void;
 	onUnmount?: () => void;
+	style?: StyleProp<ViewStyle>;
 }
 
-export interface HeaderProps {
+export interface FooterProps {
 	children?: ReactNode;
+	style?: StyleProp<ViewStyle>;
 }
