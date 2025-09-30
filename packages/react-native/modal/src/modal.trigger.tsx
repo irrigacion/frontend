@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement } from 'react';
+import { Children, cloneElement, isValidElement, useCallback, useMemo } from 'react';
 import { GestureResponderEvent, Keyboard } from 'react-native';
 import { useModal } from './modal.context';
 import { TriggerProps } from './modal.types';
@@ -14,12 +14,17 @@ export const Trigger = ({ children }: TriggerProps) => {
 
 	if (!isValidElement<TriggerChildProps>(child)) return null;
 
-	return cloneElement(child, {
-		...child.props,
-		onPress: async (event: GestureResponderEvent) => {
+	const handlePress = useCallback(
+		async (event: GestureResponderEvent) => {
 			Keyboard.dismiss();
 			await child.props.onPress?.(event);
 			setOpen(true);
 		},
+		[child.props.onPress, setOpen],
+	);
+
+	return cloneElement(child, {
+		...child.props,
+		onPress: handlePress,
 	});
 };
