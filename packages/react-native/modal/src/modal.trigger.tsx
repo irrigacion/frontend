@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement, useCallback, useMemo } from 'react';
+import { Children, cloneElement, isValidElement, useCallback } from 'react';
 import { GestureResponderEvent, Keyboard } from 'react-native';
 import { useModal } from './modal.context';
 import { TriggerProps } from './modal.types';
