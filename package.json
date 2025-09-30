@@ -76,5 +76,9 @@
 	"packageManager": "yarn@1.22.22",
 	"engines": {
 		"node": ">=22.0.0 <23.0.0"
+	},
+	"dependencies": {
+		"lucide-react-native": "^0.544.0",
+		"react-native-svg": "^15.13.0"
 	}
 }
