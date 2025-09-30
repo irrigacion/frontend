@@ -4,17 +4,19 @@ import {
 	Modal as BaseModal,
 	Dimensions,
 	Keyboard,
+	ScrollView,
 	StyleProp,
 	TouchableWithoutFeedback,
 	View,
 	ViewStyle,
 } from 'react-native';
 import { useModal } from './modal.context';
+import { Footer } from './modal.footer';
 import { Header } from './modal.header';
 import { styles } from './modal.style';
 import { ContentProps, ModalSize } from './modal.types';
 
-export const Content = ({ children, onMount, onUnmount }: ContentProps) => {
+export const Content = ({ children, onMount, onUnmount, style }: ContentProps) => {
 	const { open, setOpen, config } = useModal();
 	const window = Dimensions.get('window');
 
@@ -42,7 +44,9 @@ export const Content = ({ children, onMount, onUnmount }: ContentProps) => {
 					speed: 50,
 					useNativeDriver: true,
 				}),
-			]).start(() => onMount?.());
+			]).start(() => {
+				onMount?.();
+			});
 		} else {
 			Animated.parallel([
 				Animated.timing(opacity, { toValue: 0, duration: 150, useNativeDriver: true }),
@@ -52,12 +56,14 @@ export const Content = ({ children, onMount, onUnmount }: ContentProps) => {
 	}, [open]);
 
 	let header: React.ReactElement | null = null;
+	let footer: React.ReactElement | null = null;
 	const bodyContent: React.ReactNode[] = [];
 
 	Children.forEach(children, (child) => {
 		if (isValidElement<ContentProps>(child)) {
 			const childType = child.type as React.ComponentType<any> & { displayName: string };
 			if (childType.displayName === Header.displayName) header = child;
+			else if (childType.displayName === Footer.displayName) footer = child;
 			else bodyContent.push(child);
 		}
 	});
@@ -111,13 +117,21 @@ export const Content = ({ children, onMount, onUnmount }: ContentProps) => {
 
 						{/* Body */}
 						<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-							<View style={[styles.body, config.size === 'auto' ? {} : { flex: 1 }]}>
+							<ScrollView
+								style={config.size === 'auto' ? {} : { flex: 1 }}
+								contentContainerStyle={[styles.body, style]}
+							>
 								{bodyContent}
-							</View>
+							</ScrollView>
 						</TouchableWithoutFeedback>
+
+						{/* Footer */}
+						{footer}
 					</Animated.View>
 				</View>
 			</View>
 		</BaseModal>
 	);
 };
+
+Content.displayName = 'ModalContent';
