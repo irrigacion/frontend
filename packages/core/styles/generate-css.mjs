@@ -1,33 +1,49 @@
 import { theme } from '@irrigacion/theme';
 import fs from 'fs';
+import { TOKEN_UNITS } from './token-units.mjs';
 
-const TOKEN_UNITS = {
-	radius: 'px',
-	spacing: 'px',
-	fontSize: 'px',
-};
-
-const toKebabCase = (str) => str.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`);
+const toKebabCase = (str) =>
+	str
+		.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`)
+		.replace(/\./g, '-')
+		.toLowerCase();
 
 let cssString = ':root {\n';
 
-for (const category in theme) {
-	const tokenGroup = theme[category];
-
-	cssString += `	/* --- ${category.toUpperCase()} --- */\n`;
-
+const processTokenGroup = (category, tokenGroup, prefix = '') => {
 	for (const tokenName in tokenGroup) {
 		const value = tokenGroup[tokenName];
 		const unit = TOKEN_UNITS[category] || '';
 
-		const cssVarName = `--${toKebabCase(category)}-${toKebabCase(tokenName)}`;
+		let normalizedName;
+		if (tokenName === 'DEFAULT') normalizedName = prefix;
+		else {
+			normalizedName = prefix
+				? `${prefix}-${toKebabCase(tokenName)}`
+				: toKebabCase(tokenName);
+		}
 
-		cssString += `	${cssVarName}: ${value}${unit};\n`;
+		if (typeof value === 'object') processTokenGroup(category, value, normalizedName);
+		else {
+			const cssVarName = normalizedName
+				? `--${toKebabCase(category)}-${normalizedName}`
+				: `--${toKebabCase(category)}`;
+
+			const finalValue = typeof value === 'number' ? `${value}${unit}` : value;
+
+			cssString += `  ${cssVarName}: ${finalValue};\n`;
+		}
 	}
+};
 
+for (const category in theme) {
+	cssString += `  /* --- ${category.toUpperCase()} --- */\n`;
+	processTokenGroup(category, theme[category]);
 	cssString += '\n';
 }
 
 cssString += '}';
 
 fs.writeFileSync('./src/index.css', cssString);
+
+console.log('✅ CSS generado correctamente en ./src/index.css');
