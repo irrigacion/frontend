@@ -15,26 +15,26 @@ export const styles = StyleSheet.create({
 	},
 
 	primaryContainer: {
-		backgroundColor: theme.color.primary,
-		borderColor: theme.color.primary,
+		backgroundColor: theme.colors.primary.DEFAULT,
+		borderColor: theme.colors.primary.DEFAULT,
 	},
 	secondaryContainer: {
-		backgroundColor: theme.color.secondary,
-		borderColor: theme.color.primary,
+		backgroundColor: theme.colors.secondary.DEFAULT,
+		borderColor: theme.colors.primary.DEFAULT,
 	},
 	dangerContainer: {
-		backgroundColor: theme.color.danger,
-		borderColor: theme.color.danger,
+		backgroundColor: theme.colors.danger.DEFAULT,
+		borderColor: theme.colors.danger.DEFAULT,
 	},
 
 	primaryText: {
-		color: theme.color.textOnPrimary,
+		color: theme.colors.text.accent,
 	},
 	secondaryText: {
-		color: theme.color.textDefault,
+		color: theme.colors.text.base,
 	},
 	dangerText: {
-		color: theme.color.textOnPrimary,
+		color: theme.colors.text.accent,
 	},
 
 	smContainer: {

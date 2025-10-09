@@ -27,7 +27,11 @@ export const Input = forwardRef<TextInput, InputProps>(
 				inputRange: [0, 1],
 				outputRange: [16, 12],
 			}),
-			color: isError ? theme.color.danger : isFocused ? theme.color.primary : '#888',
+			color: isError
+				? theme.colors.danger.DEFAULT
+				: isFocused
+					? theme.colors.primary.DEFAULT
+					: '#888',
 		};
 
 		const inputStyles: StyleProp<TextStyle> = [

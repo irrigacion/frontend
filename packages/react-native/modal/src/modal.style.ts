@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
 		minHeight: 25,
 	},
 	body: {
-		padding: theme.spacing.sm,
+		padding: theme.spacing['1'],
 	},
 	footer: {
 		padding: theme.spacing[3],
