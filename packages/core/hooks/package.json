@@ -1,0 +1,32 @@
+{
+	"name": "@irrigacion/hooks",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Types utiles para el proyecto",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irrigacion/frontend",
+		"directory": "packages/core/types"
+	},
+	"bugs": {
+		"url": "https://github.com/irrigacion/frontend/issues"
+	},
+	"keywords": [
+		"react",
+		"react-native",
+		"hooks",
+		"irrigacion"
+	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"typescript": "5.9.2"
+	}
+}
