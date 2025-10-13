@@ -120,6 +120,8 @@ export const Content = ({ children, onMount, onUnmount, style }: ContentProps) =
 							<ScrollView
 								style={config.size === 'auto' ? {} : { flex: 1 }}
 								contentContainerStyle={[styles.body, style]}
+								keyboardShouldPersistTaps='handled'
+								keyboardDismissMode='on-drag'
 							>
 								{bodyContent}
 							</ScrollView>
