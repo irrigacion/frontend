@@ -1,28 +1,29 @@
+import { Button } from '@irrigacion/button-apk';
 import { Modal } from '@irrigacion/modal-apk';
-import { Text, View } from 'react-native';
+import { useRef } from 'react';
+import { Text, TextInput, View } from 'react-native';
 
 export const ViewModal = () => {
+	const inputRef = useRef<TextInput>(null);
+
 	return (
-		<Modal
-			size='fullscreen'
-			title='Título del Modal'
-			showCloseButton
-			onOpen={() => console.log('Modal abierto')}
-			onClose={() => console.log('Modal cerrado')}
-		>
+		<Modal size='auto' showCloseButton>
 			<Modal.Trigger>
-				<View style={{ padding: 10, backgroundColor: 'lightblue', borderRadius: 8 }}>
-					<Text>Abrir modal</Text>
-				</View>
+				<Button>Modal</Button>
 			</Modal.Trigger>
 
-			<Modal.Content>
-				<Text>Contenido del modal</Text>
-				<Text>Contenido del modal</Text>
-				<Text>Contenido del modal</Text>
-				<Text>Contenido del modal</Text>
-				<Text>Contenido del modal</Text>
-				<Text>Contenido del modal</Text>
+			<Modal.Content onMount={() => inputRef.current?.focus()}>
+				<Modal.Header>
+					<Text>Título del Modal</Text>
+				</Modal.Header>
+				<View>
+					<Text>Contenido del modal 1</Text>
+					<Text>Contenido del modal 2</Text>
+					<Text>Contenido del modal 3</Text>
+					<Text>Contenido del modal 4</Text>
+					<Text>Contenido del modal 5</Text>
+					<Text>Contenido del modal 6</Text>
+				</View>
 			</Modal.Content>
 		</Modal>
 	);
