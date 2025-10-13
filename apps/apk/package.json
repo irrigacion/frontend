@@ -11,6 +11,8 @@
 	"dependencies": {
 		"@irrigacion/button-apk": "*",
 		"@irrigacion/modal-apk": "*",
+		"@irrigacion/types": "*",
+		"@irrigacion/hooks": "*",
 		"expo": "~54.0.9",
 		"expo-status-bar": "~3.0.8",
 		"react": "19.1.0",

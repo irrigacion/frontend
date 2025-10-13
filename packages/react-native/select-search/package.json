@@ -1,0 +1,48 @@
+{
+	"name": "@irrigacion/select-search-apk",
+	"version": "0.0.1",
+	"private": false,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irrigacion/frontend",
+		"directory": "packages/react-native/select-search"
+	},
+	"bugs": {
+		"url": "https://github.com/irrigacion/frontend/issues"
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"react-native",
+		"component",
+		"select-search",
+		"ui",
+		"irrigacion"
+	],
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"test": "vitest",
+		"lint": "eslint . --ext .ts,.tsx"
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-native": ">=0.60.0",
+		"lucide-react-native": "^0.544.0"
+	},
+	"dependencies": {
+		"@irrigacion/theme": "0.0.1",
+		"@irrigacion/hooks": "0.0.1",
+		"@irrigacion/input-apk": "0.0.1",
+		"@irrigacion/modal-apk": "0.0.2",
+		"@irrigacion/button-apk": "0.0.1"
+	},
+	"devDependencies": {
+		"@irrigacion/types": "*",
+		"@irrigacion/config": "*"
+	}
+}
