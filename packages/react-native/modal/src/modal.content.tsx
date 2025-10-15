@@ -119,6 +119,7 @@ export const Content = forwardRef<ScrollView, ContentProps>(
 							{/* Body */}
 							<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
 								<ScrollView
+									ref={ref}
 									style={config.size === 'auto' ? {} : { flex: 1 }}
 									contentContainerStyle={[styles.body, style]}
 									keyboardShouldPersistTaps='handled'

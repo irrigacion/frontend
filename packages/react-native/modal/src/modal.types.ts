@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { PressableStateCallbackType, StyleProp, ViewStyle } from 'react-native';
+import { PressableStateCallbackType, ScrollView, StyleProp, ViewStyle } from 'react-native';
 
 export type ModalSize = 'auto' | 'lg' | 'fullscreen';
 
@@ -37,6 +37,7 @@ export interface ContentProps {
 	onMount?: () => void;
 	onUnmount?: () => void;
 	style?: StyleProp<ViewStyle>;
+	ref?: React.RefObject<ScrollView>;
 }
 
 export interface FooterProps {
