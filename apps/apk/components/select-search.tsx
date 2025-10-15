@@ -8,15 +8,18 @@ const FAKE_OPTIONS = Array.from({ length: 100 }, (_, i) => {
 	};
 });
 
+const defaultValue = FAKE_OPTIONS[42];
+
 export const ViewSelectSearch = () => {
 	return (
 		<View style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
 			<SelectSearch
+				defaultValue={defaultValue}
 				label='Buscar Organismos'
 				getOptions={async ({ page, size, query }) => {
+					await new Promise((resolve) => setTimeout(resolve, 10));
 					const options = FAKE_OPTIONS.filter((option) => option.name.includes(query));
 					const paginated = options.slice(page * size, (page + 1) * size);
-					console.log('!??');
 					if (query.length > 4) throw 'a';
 					return {
 						data: paginated,
