@@ -50,6 +50,12 @@ export interface SelectSearchContextValue<T> {
  * @template T El tipo de dato para las opciones.
  */
 export interface SelectSearchProps<T> {
+	/** (Opcional) El valor seleccionado actual. Si se proporciona, el componente opera en modo controlado. */
+	value?: T | null;
+	/** (Opcional) Callback que se ejecuta cuando el valor seleccionado cambia. Requerido para el modo controlado. */
+	onChange?: (value: T | null) => void;
+	/** (Opcional) El valor inicial para el modo no controlado. */
+	defaultValue?: T | null;
 	/** Función asíncrona que obtiene las opciones. Recibe `GetOptionsProps` y devuelve una `Promise` con una `Response<T>`. */
 	getOptions: (props: GetOptionsProps) => Promise<Response<T>>;
 	/** Función que recibe una opción de tipo `T` y devuelve el `string` a mostrar. */

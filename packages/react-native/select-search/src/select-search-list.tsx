@@ -36,7 +36,13 @@ export const SelectSearchList = <T,>({ renderOption }: Props<T>) => {
 		);
 	}
 
-	if (!options.length) {
+	const filteredOptions = selectedOption
+		? options.filter((option) => option[keyProp] !== selectedOption[keyProp])
+		: options;
+
+	const displayedOptions = selectedOption ? [selectedOption, ...filteredOptions] : options;
+
+	if (!displayedOptions.length) {
 		return (
 			<View style={[styles.option, styles.loading]}>
 				<Text>{noResultsText}</Text>
@@ -46,7 +52,7 @@ export const SelectSearchList = <T,>({ renderOption }: Props<T>) => {
 
 	return (
 		<>
-			{options.map((option) => {
+			{displayedOptions.map((option) => {
 				const selected = selectedOption?.[keyProp] === option[keyProp];
 				return (
 					<Pressable

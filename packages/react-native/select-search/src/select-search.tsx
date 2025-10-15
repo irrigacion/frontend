@@ -11,6 +11,9 @@ import { PaginationData } from '@irrigacion/types';
 import { Modal } from '@irrigacion/modal-apk';
 
 export const SelectSearch = <T,>({
+	value,
+	onChange,
+	defaultValue = null,
 	label,
 	keyProp,
 	getOptions,
@@ -29,7 +32,17 @@ export const SelectSearch = <T,>({
 	loadingText = 'Buscando...',
 	debounceTime = 200,
 }: SelectSearchProps<T>) => {
-	const [selectedOption, setSelectedOption] = useState<T | null>(null);
+	const [internalOption, setInternalOption] = useState<T | null>(defaultValue);
+	const isControlled = value !== undefined;
+	const selectedOption = isControlled ? value : internalOption;
+
+	const handleValueChange = (option: T | null) => {
+		if (!isControlled) {
+			setInternalOption(option);
+		}
+		onChange?.(option);
+	};
+
 	const [options, setOptions] = useState<T[]>([]);
 	const [paginationData, setPaginationData] = useState<PaginationData | null>(null);
 	const [queryInput, setQueryInput] = useState('');
@@ -45,9 +58,9 @@ export const SelectSearch = <T,>({
 
 	const handleSelectOption = (option: T) => {
 		if (selectedOption && selectedOption[keyProp] === option[keyProp]) {
-			setSelectedOption(null);
+			handleValueChange(null);
 		} else {
-			setSelectedOption(option);
+			handleValueChange(option);
 		}
 		if (closeModalOnSelect) setIsModalOpen(false);
 	};
@@ -56,6 +69,8 @@ export const SelectSearch = <T,>({
 		setError(undefined);
 		setIsLoading(false);
 		setPage(0);
+		setQueryInput('');
+		setQuery('');
 		onClose?.();
 	};
 
@@ -80,7 +95,7 @@ export const SelectSearch = <T,>({
 
 	const contextValue: SelectSearchContextValue<T> = {
 		selectedOption,
-		setSelectedOption,
+		setSelectedOption: handleValueChange,
 		options,
 		isLoading,
 		error,
