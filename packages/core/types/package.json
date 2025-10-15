@@ -1,8 +1,8 @@
 {
 	"name": "@irrigacion/types",
 	"version": "0.0.1",
-	"private": true,
-	"description": "Types utiles para el proyecto",
+	"private": false,
+	"description": "Types utiles para los componentes y utilidades de Irrigacion.",
 	"license": "MIT",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
