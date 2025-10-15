@@ -1,14 +1,14 @@
 import { useDebounce } from '@irrigacion/hooks';
+import { Modal } from '@irrigacion/modal-apk';
+import { PaginationData } from '@irrigacion/types';
 import { useEffect, useRef, useState } from 'react';
-import { TextInput } from 'react-native';
-import { SelectSearchContext } from './select-search.context';
+import { ScrollView, TextInput } from 'react-native';
 import { SelectSearchInput } from './select-search-input';
 import { SelectSearchList } from './select-search-list';
 import { SelectSearchPagination } from './select-search-pagination';
+import { SelectSearchContext } from './select-search.context';
 import type { SelectSearchContextValue, SelectSearchProps } from './select-search.types';
 import { SelectedOption } from './selected-option';
-import { PaginationData } from '@irrigacion/types';
-import { Modal } from '@irrigacion/modal-apk';
 
 export const SelectSearch = <T,>({
 	value,
@@ -36,13 +36,6 @@ export const SelectSearch = <T,>({
 	const isControlled = value !== undefined;
 	const selectedOption = isControlled ? value : internalOption;
 
-	const handleValueChange = (option: T | null) => {
-		if (!isControlled) {
-			setInternalOption(option);
-		}
-		onChange?.(option);
-	};
-
 	const [options, setOptions] = useState<T[]>([]);
 	const [paginationData, setPaginationData] = useState<PaginationData | null>(null);
 	const [queryInput, setQueryInput] = useState('');
@@ -54,7 +47,27 @@ export const SelectSearch = <T,>({
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const inputRef = useRef<TextInput>(null);
-	useDebounce({ value: queryInput, delay: debounceTime, callback: setQuery });
+	const scrollRef = useRef<ScrollView>(null);
+	const shouldScrollToTop = useRef(false);
+
+	useDebounce({
+		value: queryInput,
+		delay: debounceTime,
+		callback: (newQuery) => {
+			shouldScrollToTop.current = true;
+			setQuery(newQuery);
+		},
+	});
+
+	const handleValueChange = (option: T | null) => {
+		if (!isControlled) setInternalOption(option);
+		onChange?.(option);
+	};
+
+	const handlePageChange = (newPage: number) => {
+		shouldScrollToTop.current = true;
+		setPage(newPage);
+	};
 
 	const handleSelectOption = (option: T) => {
 		if (selectedOption && selectedOption[keyProp] === option[keyProp]) {
@@ -93,6 +106,13 @@ export const SelectSearch = <T,>({
 		fetchOptions();
 	}, [isModalOpen, query, page, size]);
 
+	useEffect(() => {
+		if (shouldScrollToTop.current && scrollRef.current) {
+			scrollRef.current.scrollTo({ y: 0, animated: false });
+			shouldScrollToTop.current = false;
+		}
+	}, [options]);
+
 	const contextValue: SelectSearchContextValue<T> = {
 		selectedOption,
 		setSelectedOption: handleValueChange,
@@ -102,7 +122,7 @@ export const SelectSearch = <T,>({
 		paginationData,
 		page,
 		size,
-		setPage,
+		setPage: handlePageChange,
 		queryInput,
 		setQueryInput,
 		handleSelectOption,
@@ -134,6 +154,7 @@ export const SelectSearch = <T,>({
 				</Modal.Trigger>
 
 				<Modal.Content
+					ref={scrollRef}
 					onMount={() => autofocus && inputRef.current?.focus()}
 					style={{ padding: 0 }}
 				>
