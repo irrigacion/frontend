@@ -13,6 +13,7 @@
 	},
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"source": "src/index.tsx",
 	"files": [
 		"dist"
 	],
