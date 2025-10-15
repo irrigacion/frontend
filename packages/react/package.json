@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/react",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -29,7 +29,7 @@
 		"lint": "eslint . --ext .ts,.tsx"
 	},
 	"dependencies": {
-		"@irrigacion/button": "0.0.1"
+		"@irrigacion/button": "0.0.2"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0",

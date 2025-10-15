@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/button",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -35,7 +35,7 @@
 		"react-dom": "^18.0.0"
 	},
 	"dependencies": {
-		"@irrigacion/styles": "0.0.1",
+		"@irrigacion/styles": "0.0.2",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1"
 	},

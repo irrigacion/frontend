@@ -1,22 +1,17 @@
-# @irrigacion/react-native
-
-## 0.0.3
-
-### Patch Changes
-
-- Se exportan los packages input y select-search
-- Updated dependencies
-- Updated dependencies
-- Updated dependencies
-- Updated dependencies
-    - @irrigacion/input-apk@0.0.2
-    - @irrigacion/select-search-apk@0.0.2
-    - @irrigacion/modal-apk@0.0.3
-    - @irrigacion/button-apk@0.0.2
+# @irrigacion/select-search-apk
 
 ## 0.0.2
 
 ### Patch Changes
 
+- Se creó el componente SelectSearch para React Native.
 - Updated dependencies
-    - @irrigacion/modal-apk@0.0.2
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+    - @irrigacion/theme@0.0.2
+    - @irrigacion/input-apk@0.0.2
+    - @irrigacion/hooks@0.0.2
+    - @irrigacion/modal-apk@0.0.3
+    - @irrigacion/button-apk@0.0.2

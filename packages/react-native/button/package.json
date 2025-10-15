@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/button-apk",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -35,7 +35,7 @@
 		"react-native": ">=0.60.0"
 	},
 	"dependencies": {
-		"@irrigacion/theme": "0.0.1"
+		"@irrigacion/theme": "0.0.2"
 	},
 	"devDependencies": {
 		"@irrigacion/config": "*"
