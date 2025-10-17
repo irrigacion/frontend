@@ -1,5 +1,11 @@
 # @irrigacion/react-native
 
+## 0.0.6
+
+### Patch Changes
+
+- Se exporta el package checkbox
+
 ## 0.0.5
 
 ### Patch Changes
