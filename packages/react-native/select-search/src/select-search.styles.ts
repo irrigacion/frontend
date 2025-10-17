@@ -26,7 +26,11 @@ export const styles = StyleSheet.create({
 	},
 
 	// Input
-	input: { padding: 8, paddingBottom: 0 },
+	input: {
+		padding: theme.spacing[2],
+		paddingBottom: theme.spacing[0],
+		marginBottom: theme.spacing[2],
+	},
 
 	// Selected Option
 
@@ -41,7 +45,7 @@ export const styles = StyleSheet.create({
 		borderWidth: 1,
 		minWidth: 240,
 		borderRadius: theme.radius.md,
-		padding: theme.spacing['2'],
+		padding: theme.spacing[2],
 		fontSize: theme.fontSize.base,
 		borderColor: '#ccc',
 		borderTopWidth: 0,
@@ -88,7 +92,7 @@ export const styles = StyleSheet.create({
 	},
 	label: {
 		position: 'absolute',
-		left: theme.spacing['1'],
+		left: theme.spacing[1],
 		paddingHorizontal: 4,
 		fontSize: theme.fontSize.xs,
 		zIndex: 4,
@@ -97,5 +101,5 @@ export const styles = StyleSheet.create({
 	},
 	// Pagination
 	pagination: { fontSize: theme.fontSize.xs },
-	pageNavigation: { flexDirection: 'row', gap: theme.spacing['2'] },
+	pageNavigation: { flexDirection: 'row', gap: theme.spacing[2] },
 });
