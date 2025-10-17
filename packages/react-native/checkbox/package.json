@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/checkbox-apk",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -32,7 +32,8 @@
 	},
 	"peerDependencies": {
 		"react": "^18.0.0",
-		"react-native": ">=0.60.0"
+		"react-native": ">=0.60.0",
+		"lucide-react-native": "^0.544.0"
 	},
 	"dependencies": {
 		"@irrigacion/theme": "0.0.3"

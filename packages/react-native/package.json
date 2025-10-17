@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/react-native",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -30,6 +30,7 @@
 	},
 	"dependencies": {
 		"@irrigacion/button-apk": "0.0.3",
+		"@irrigacion/checkbox-apk": "0.0.3",
 		"@irrigacion/input-apk": "0.0.3",
 		"@irrigacion/modal-apk": "0.0.4",
 		"@irrigacion/select-search-apk": "0.0.4"

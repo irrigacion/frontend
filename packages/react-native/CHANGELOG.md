@@ -1,5 +1,11 @@
 # @irrigacion/react-native
 
+## 0.0.7
+
+### Patch Changes
+
+- Se corrigieron las dependencias del package json
+
 ## 0.0.6
 
 ### Patch Changes
