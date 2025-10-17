@@ -1,5 +1,14 @@
 # @irrigacion/react-native
 
+## 0.0.5
+
+### Patch Changes
+
+- @irrigacion/button-apk@0.0.3
+- @irrigacion/input-apk@0.0.3
+- @irrigacion/modal-apk@0.0.4
+- @irrigacion/select-search-apk@0.0.4
+
 ## 0.0.4
 
 ### Patch Changes

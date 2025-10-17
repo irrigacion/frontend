@@ -13,7 +13,7 @@
 		"build": "node generate-css.mjs"
 	},
 	"devDependencies": {
-		"@irrigacion/theme": "0.0.2"
+		"@irrigacion/theme": "0.0.3"
 	},
 	"repository": {
 		"type": "git",

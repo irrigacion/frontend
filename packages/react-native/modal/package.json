@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/modal-apk",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -36,7 +36,7 @@
 		"lucide-react-native": "^0.544.0"
 	},
 	"dependencies": {
-		"@irrigacion/theme": "0.0.2"
+		"@irrigacion/theme": "0.0.3"
 	},
 	"devDependencies": {
 		"@irrigacion/config": "*"

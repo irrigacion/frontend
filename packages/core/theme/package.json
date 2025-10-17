@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/theme",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": false,
 	"description": "Contiene los design tokens (colores, espaciado, etc.) para el sistema de diseño Irrigacion.",
 	"license": "MIT",
