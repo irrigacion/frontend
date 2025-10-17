@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/react-native",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -32,7 +32,7 @@
 		"@irrigacion/button-apk": "0.0.2",
 		"@irrigacion/input-apk": "0.0.2",
 		"@irrigacion/modal-apk": "0.0.3",
-		"@irrigacion/select-search-apk": "0.0.2"
+		"@irrigacion/select-search-apk": "0.0.3"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0",

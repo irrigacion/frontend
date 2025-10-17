@@ -1,5 +1,11 @@
 # @irrigacion/select-search-apk
 
+## 0.0.3
+
+### Patch Changes
+
+- Se ajustan los estilos del componente Select Search para mejorar la consistencia en el uso de espaciados y márgenes.
+
 ## 0.0.2
 
 ### Patch Changes
