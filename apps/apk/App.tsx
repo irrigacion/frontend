@@ -5,6 +5,7 @@ import { ViewCheckbox } from './components/checkbox';
 import { ViewInput } from './components/input';
 import { ViewModal } from './components/modal';
 import { ViewSelectSearch } from './components/select-search';
+import { ViewSwitch } from './components/switch';
 
 export default function App() {
 	return (
@@ -15,6 +16,7 @@ export default function App() {
 				<ViewModal />
 				<ViewSelectSearch />
 				<ViewCheckbox />
+				<ViewSwitch />
 				<StatusBar style='auto' />
 			</View>
 		</TouchableWithoutFeedback>

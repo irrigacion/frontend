@@ -15,6 +15,7 @@
 		"@irrigacion/input-apk": "*",
 		"@irrigacion/modal-apk": "*",
 		"@irrigacion/select-search-apk": "*",
+		"@irrigacion/switch-apk": "*",
 		"@irrigacion/types": "*",
 		"expo": "~54.0.9",
 		"expo-status-bar": "~3.0.8",
