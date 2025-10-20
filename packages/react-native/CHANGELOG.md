@@ -1,5 +1,11 @@
 # @irrigacion/react-native
 
+## 0.0.8
+
+### Patch Changes
+
+- Se agregó el componente Switch
+
 ## 0.0.7
 
 ### Patch Changes
