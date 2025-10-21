@@ -37,7 +37,7 @@
 		"lucide-react-native": "*"
 	},
 	"dependencies": {
-		"@irrigacion/theme": "0.0.2"
+		"@irrigacion/theme": "0.0.3"
 	},
 	"devDependencies": {
 		"@irrigacion/config": "*"
