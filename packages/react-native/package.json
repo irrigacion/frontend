@@ -29,6 +29,7 @@
 		"lint": "eslint . --ext .ts,.tsx"
 	},
 	"dependencies": {
+		"@irrigacion/alert-apk": "0.0.1",
 		"@irrigacion/button-apk": "0.0.3",
 		"@irrigacion/checkbox-apk": "0.0.3",
 		"@irrigacion/input-apk": "0.0.3",
