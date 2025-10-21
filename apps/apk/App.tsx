@@ -9,6 +9,7 @@ import { ViewSwitch } from './components/switch';
 import { ViewSpinner } from './components/spinner';
 import { ViewAlert } from './components/alert';
 import { ViewProgressBar } from './components/progress-bar';
+import { ViewDivider } from './components/divider';
 
 export default function App() {
 	return (
@@ -23,6 +24,7 @@ export default function App() {
 				<ViewSpinner />
 				<ViewAlert />
 				<ViewProgressBar />
+				<ViewDivider />
 				<StatusBar style='auto' />
 			</ScrollView>
 		</TouchableWithoutFeedback>
