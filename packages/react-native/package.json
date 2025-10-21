@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/react-native",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -31,6 +31,7 @@
 	"dependencies": {
 		"@irrigacion/alert-apk": "0.0.1",
 		"@irrigacion/button-apk": "0.0.3",
+		"@irrigacion/card-apk": "0.0.1",
 		"@irrigacion/checkbox-apk": "0.0.3",
 		"@irrigacion/divider-apk": "0.0.1",
 		"@irrigacion/input-apk": "0.0.3",

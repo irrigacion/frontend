@@ -1,5 +1,11 @@
 # @irrigacion/react-native
 
+## 0.0.13
+
+### Patch Changes
+
+- Se exporta el package Card
+
 ## 0.0.12
 
 ### Patch Changes
