@@ -1,5 +1,11 @@
 # @irrigacion/react-native
 
+## 0.0.11
+
+### Patch Changes
+
+- Se exporta el package ProgressBar
+
 ## 0.0.10
 
 ### Patch Changes
