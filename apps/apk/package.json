@@ -9,6 +9,7 @@
 		"web": "expo start --web"
 	},
 	"dependencies": {
+		"@irrigacion/alert-apk": "*",
 		"@irrigacion/button-apk": "*",
 		"@irrigacion/checkbox-apk": "*",
 		"@irrigacion/hooks": "*",

@@ -7,6 +7,7 @@ import { ViewModal } from './components/modal';
 import { ViewSelectSearch } from './components/select-search';
 import { ViewSwitch } from './components/switch';
 import { ViewSpinner } from './components/spinner';
+import { ViewAlert } from './components/alert';
 
 export default function App() {
 	return (
@@ -19,6 +20,7 @@ export default function App() {
 				<ViewCheckbox />
 				<ViewSwitch />
 				<ViewSpinner />
+				<ViewAlert />
 				<StatusBar style='auto' />
 			</ScrollView>
 		</TouchableWithoutFeedback>
