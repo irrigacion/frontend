@@ -1,16 +1,22 @@
 # @irrigacion/react-native
 
+## 0.0.9
+
+### Patch Changes
+
+- Se exporta el package Spinner
+
 ## 0.0.8
 
 ### Patch Changes
 
-- Se agregó el componente Switch
+- Se exporta el package Switch
 
 ## 0.0.7
 
 ### Patch Changes
 
-- Se corrigieron las dependencias del package json
+- Se corrigieron las dependencias del package.json
 
 ## 0.0.6
 
