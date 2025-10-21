@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@irrigacion/alert-apk": "*",
 		"@irrigacion/button-apk": "*",
+		"@irrigacion/card-apk": "*",
 		"@irrigacion/checkbox-apk": "*",
 		"@irrigacion/divider-apk": "*",
 		"@irrigacion/hooks": "*",

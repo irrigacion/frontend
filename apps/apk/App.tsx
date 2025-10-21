@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { Keyboard, StyleSheet, TouchableWithoutFeedback, ScrollView } from 'react-native';
+import { Keyboard, ScrollView, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { ViewAlert } from './components/alert';
 import { ViewButtons } from './components/buttons';
+import { ViewCard } from './components/card';
 import { ViewCheckbox } from './components/checkbox';
+import { ViewDivider } from './components/divider';
 import { ViewInput } from './components/input';
 import { ViewModal } from './components/modal';
-import { ViewSelectSearch } from './components/select-search';
-import { ViewSwitch } from './components/switch';
-import { ViewSpinner } from './components/spinner';
-import { ViewAlert } from './components/alert';
 import { ViewProgressBar } from './components/progress-bar';
-import { ViewDivider } from './components/divider';
+import { ViewSelectSearch } from './components/select-search';
+import { ViewSpinner } from './components/spinner';
+import { ViewSwitch } from './components/switch';
 
 export default function App() {
 	return (
@@ -17,6 +18,7 @@ export default function App() {
 			<ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
 				<ViewButtons />
 				<ViewInput />
+				<ViewCard />
 				<ViewModal />
 				<ViewSelectSearch />
 				<ViewCheckbox />
@@ -37,11 +39,10 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 	},
 	contentContainer: {
-		// Estos estilos se aplican al contenido que se va a scrollear
-		flexGrow: 1, // Permite que el contenido crezca para llenar la pantalla
-		gap: 24, // Un poco más de espacio entre componentes
+		flexGrow: 1,
+		gap: 24,
 		padding: 36,
-		alignItems: 'center', // Centra los componentes horizontalmente
-		justifyContent: 'center', // Centra el bloque de componentes verticalmente
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 });
