@@ -1,5 +1,11 @@
 # @irrigacion/react-native
 
+## 0.0.10
+
+### Patch Changes
+
+- Se exporta el package Alert
+
 ## 0.0.9
 
 ### Patch Changes
