@@ -8,6 +8,7 @@ import { ViewSelectSearch } from './components/select-search';
 import { ViewSwitch } from './components/switch';
 import { ViewSpinner } from './components/spinner';
 import { ViewAlert } from './components/alert';
+import { ViewProgressBar } from './components/progress-bar';
 
 export default function App() {
 	return (
@@ -21,6 +22,7 @@ export default function App() {
 				<ViewSwitch />
 				<ViewSpinner />
 				<ViewAlert />
+				<ViewProgressBar />
 				<StatusBar style='auto' />
 			</ScrollView>
 		</TouchableWithoutFeedback>

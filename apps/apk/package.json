@@ -15,6 +15,7 @@
 		"@irrigacion/hooks": "*",
 		"@irrigacion/input-apk": "*",
 		"@irrigacion/modal-apk": "*",
+		"@irrigacion/progress-bar-apk": "*",
 		"@irrigacion/select-search-apk": "*",
 		"@irrigacion/spinner-apk": "*",
 		"@irrigacion/switch-apk": "*",
