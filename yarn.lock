@@ -1854,6 +1854,11 @@
     chardet "^2.1.0"
     iconv-lite "^0.7.0"
 
+"@irrigacion/theme@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@irrigacion/theme/-/theme-0.0.2.tgz#ab27cbfa899d843e2c7424a192776c2ab91c5c3f"
+  integrity sha512-FrLz8Ubq77g5tc3i2nQXx3AMILHYRLVBCaifP7joZTVKCAJxvXTaurwrhArgdi9qXyZypnwA1TqKBS5mD6bWLA==
+
 "@isaacs/balanced-match@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@isaacs/balanced-match/-/balanced-match-4.0.1.tgz#3081dadbc3460661b751e7591d7faea5df39dd29"
