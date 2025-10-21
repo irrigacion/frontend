@@ -1,5 +1,11 @@
 # @irrigacion/react-native
 
+## 0.0.12
+
+### Patch Changes
+
+- Se exporta el package Divider
+
 ## 0.0.11
 
 ### Patch Changes

@@ -1,6 +1,7 @@
 export * from '@irrigacion/alert-apk';
 export * from '@irrigacion/button-apk';
 export * from '@irrigacion/checkbox-apk';
+export * from '@irrigacion/divider-apk';
 export * from '@irrigacion/input-apk';
 export * from '@irrigacion/modal-apk';
 export * from '@irrigacion/progress-bar-apk';

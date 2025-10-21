@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/react-native",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -32,6 +32,7 @@
 		"@irrigacion/alert-apk": "0.0.1",
 		"@irrigacion/button-apk": "0.0.3",
 		"@irrigacion/checkbox-apk": "0.0.3",
+		"@irrigacion/divider-apk": "0.0.1",
 		"@irrigacion/input-apk": "0.0.3",
 		"@irrigacion/modal-apk": "0.0.4",
 		"@irrigacion/progress-bar-apk": "0.0.1",
