@@ -32,7 +32,6 @@ export const Root = ({
 		}
 		//
 		else if (!open && hasOpened) {
-			Keyboard.dismiss();
 			config.onClose?.();
 			setHasOpened(false);
 		}
@@ -43,8 +42,9 @@ export const Root = ({
 
 	Children.forEach(children, (child) => {
 		if (isValidElement(child)) {
-			if (child.type === Trigger) trigger = child;
-			else if (child.type === Content) content = child;
+			const type = child.type as React.ComponentType<any> & { displayName?: string };
+			if (type.displayName === 'ModalTrigger') trigger = child;
+			else if (type.displayName === 'ModalContent') content = child;
 		}
 	});
 

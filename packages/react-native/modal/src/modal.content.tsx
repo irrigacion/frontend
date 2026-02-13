@@ -21,24 +21,24 @@ export const Content = forwardRef<ScrollView, ContentProps>(
 		const { open, setOpen, config } = useModal();
 		const window = Dimensions.get('window');
 
-		const [isVisible, setIsVisible] = useState(open);
+		const [isRendering, setIsRendering] = useState(open);
 
 		const opacity = useRef(new Animated.Value(0)).current;
 		const scale = useRef(new Animated.Value(0.8)).current;
 
 		useEffect(() => {
-			if (!isVisible) return;
+			if (!isRendering) return;
 
 			return () => {
 				onUnmount?.();
 			};
-		}, [isVisible, onUnmount]);
+		}, [isRendering, onUnmount]);
 
 		useEffect(() => {
 			if (open) {
-				setIsVisible(true);
+				setIsRendering(true);
 				Animated.parallel([
-					Animated.timing(opacity, { toValue: 1, duration: 0, useNativeDriver: true }),
+					Animated.timing(opacity, { toValue: 1, duration: 200, useNativeDriver: true }),
 					Animated.spring(scale, {
 						toValue: 1,
 						bounciness: 5,
@@ -52,7 +52,9 @@ export const Content = forwardRef<ScrollView, ContentProps>(
 				Animated.parallel([
 					Animated.timing(opacity, { toValue: 0, duration: 150, useNativeDriver: true }),
 					Animated.timing(scale, { toValue: 0.8, duration: 150, useNativeDriver: true }),
-				]).start(() => setIsVisible(false));
+				]).start(({ finished }) => {
+					if (finished) setIsRendering(false);
+				});
 			}
 		}, [open]);
 
@@ -69,7 +71,7 @@ export const Content = forwardRef<ScrollView, ContentProps>(
 			}
 		});
 
-		if (!isVisible) return null;
+		if (!isRendering) return null;
 
 		const dimensions: Record<ModalSize, StyleProp<ViewStyle>> = {
 			auto: { width: '90%', maxHeight: '90%' },
@@ -81,7 +83,7 @@ export const Content = forwardRef<ScrollView, ContentProps>(
 
 		return (
 			<BaseModal
-				visible={isVisible}
+				visible={isRendering}
 				transparent
 				animationType='none'
 				onRequestClose={() => setOpen(false)}

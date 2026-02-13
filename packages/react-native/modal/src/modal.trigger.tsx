@@ -28,3 +28,5 @@ export const Trigger = ({ children }: TriggerProps) => {
 		onPress: handlePress,
 	});
 };
+
+Trigger.displayName = 'ModalTrigger';
