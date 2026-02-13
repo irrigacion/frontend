@@ -1,5 +1,12 @@
 # @irrigacion/select-search-apk
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [ce729f7]
+    - @irrigacion/modal-apk@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

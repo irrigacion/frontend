@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/select-search-apk",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -39,7 +39,7 @@
 		"@irrigacion/theme": "0.0.3",
 		"@irrigacion/hooks": "0.0.2",
 		"@irrigacion/input-apk": "0.0.3",
-		"@irrigacion/modal-apk": "0.0.4",
+		"@irrigacion/modal-apk": "0.0.5",
 		"@irrigacion/button-apk": "0.0.3"
 	},
 	"devDependencies": {

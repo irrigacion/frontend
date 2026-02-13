@@ -1,5 +1,13 @@
 # @irrigacion/react-native
 
+## 0.0.14
+
+### Patch Changes
+
+- Updated dependencies [ce729f7]
+    - @irrigacion/modal-apk@0.0.5
+    - @irrigacion/select-search-apk@0.0.5
+
 ## 0.0.13
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @irrigacion/modal-apk
 
+## 0.0.5
+
+### Patch Changes
+
+- ce729f7: Se corrigió el comportamiento errático del modal
+
 ## 0.0.4
 
 ### Patch Changes

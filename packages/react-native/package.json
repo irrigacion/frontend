@@ -1,6 +1,6 @@
 {
 	"name": "@irrigacion/react-native",
-	"version": "0.0.13",
+	"version": "0.0.14",
 	"private": false,
 	"license": "MIT",
 	"repository": {
@@ -35,9 +35,9 @@
 		"@irrigacion/checkbox-apk": "0.0.3",
 		"@irrigacion/divider-apk": "0.0.1",
 		"@irrigacion/input-apk": "0.0.3",
-		"@irrigacion/modal-apk": "0.0.4",
+		"@irrigacion/modal-apk": "0.0.5",
 		"@irrigacion/progress-bar-apk": "0.0.1",
-		"@irrigacion/select-search-apk": "0.0.4",
+		"@irrigacion/select-search-apk": "0.0.5",
 		"@irrigacion/spinner-apk": "0.0.1",
 		"@irrigacion/switch-apk": "0.0.1"
 	},
